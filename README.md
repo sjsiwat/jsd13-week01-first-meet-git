@@ -1,1 +1,2 @@
-My first JSD project
+My first JSD project 
+WEEK01
