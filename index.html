@@ -3,247 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive HTML Tags Demo Page</title>
+  <title>My Cat Gang</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Segoe UI", Verdana, Arial, sans-serif;
+      background: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1920&q=80") center center / cover no-repeat fixed;
+      color: #ffffff;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0 0 8px;
+    }
+
+    header p {
+      margin: 0;
+      color: #f0f0f0;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .cat-card {
+      background: rgba(20, 20, 30, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .cat-card .photo-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cat-card h2 {
+      margin: 12px 0 4px;
+      text-transform: capitalize;
+      font-size: 1.3rem;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .cat-card .badge {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 224, 236, 0.9);
+      color: #c14b7c;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .cat-card p {
+      margin: 6px 0;
+      font-size: 0.9rem;
+      color: #f0f0f0;
+    }
+
+    .cat-card p span {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    section.data-view {
+      margin-top: 50px;
+      background: rgba(20, 20, 30, 0.45);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 24px 28px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    section.data-view h2 {
+      margin-top: 0;
+    }
+
+    section.data-view ol {
+      columns: 2;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #f0f0f0;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ===================== HEADER & NAVIGATION ===================== -->
   <header>
-    <h1>HTML Tags Demo Page</h1>
-    <nav>
-      <ul>
-        <li><a href="#introduction">Introduction</a></li>
-        <li><a href="#text-elements">Text Elements</a></li>
-        <li><a href="#lists">Lists</a></li>
-        <li><a href="#links-images">Links &amp; Images</a></li>
-        <li><a href="#tables">Tables</a></li>
-        <li><a href="#forms">Forms</a></li>
-        <li><a href="#media">Media</a></li>
-        <li><a href="#aside-notes">Notes</a></li>
-      </ul>
-    </nav>
+    <h1>🐱 My Cat Gang 🐱</h1>
+    <p>Meet the crew, rendered live from <code>my-array.js</code> and <code>my-object.js</code></p>
   </header>
 
-  <!-- ===================== MAIN CONTENT ===================== -->
   <main>
+    <div class="cat-grid" id="catGrid">
+      <!-- Cat cards are generated here by JavaScript -->
+    </div>
 
-    <!-- ===================== INTRODUCTION ===================== -->
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <article>
-        <p>
-          Welcome! This page is a beginner-friendly demonstration of the most
-          commonly used <strong>HTML tags</strong>. It uses <em>only HTML</em> —
-          no CSS and no JavaScript — so you can view the page source and see
-          exactly how each element is structured.
-        </p>
-        <p>
-          Feel free to <small>right-click and "View Page Source"</small> to
-          explore the markup behind every section below.
-        </p>
-      </article>
+    <section class="data-view">
+      <h2>Raw Data</h2>
+      <h3>From my-array.js</h3>
+      <ol id="arrayList"></ol>
+
+      <h3>From my-object.js</h3>
+      <ol id="objectList"></ol>
     </section>
-
-    <hr>
-
-    <!-- ===================== TEXT ELEMENTS ===================== -->
-    <section id="text-elements">
-      <h2>Text Elements</h2>
-
-      <h1>Heading Level 1</h1>
-      <h2>Heading Level 2</h2>
-      <h3>Heading Level 3</h3>
-      <h4>Heading Level 4</h4>
-      <h5>Heading Level 5</h5>
-      <h6>Heading Level 6</h6>
-
-      <p>
-        This is a normal paragraph of text.<br>
-        This second line appears after a line break using the
-        <code>&lt;br&gt;</code> tag.
-      </p>
-
-      <p>
-        You can make text <strong>strong (important)</strong> or
-        <em>emphasized (italic)</em>. You can also show
-        <small>small print text</small> and
-        <code>inline code snippets</code>.
-      </p>
-
-      <pre>
-function greet() {
-  console.log("Hello, World!");
-}
-      </pre>
-
-      <blockquote>
-        "The best way to learn HTML is to read HTML."
-      </blockquote>
-    </section>
-
-    <hr>
-
-    <!-- ===================== LISTS ===================== -->
-    <section id="lists">
-      <h2>Lists</h2>
-
-      <h3>Ordered List</h3>
-      <ol>
-        <li>Learn HTML structure</li>
-        <li>Learn semantic tags</li>
-        <li>Practice building pages</li>
-      </ol>
-
-      <h3>Unordered List</h3>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-      </ul>
-
-      <h3>Description List</h3>
-      <dl>
-        <dt>HTML</dt>
-        <dd>HyperText Markup Language — defines page structure.</dd>
-        <dt>CSS</dt>
-        <dd>Cascading Style Sheets — defines page style.</dd>
-        <dt>JS</dt>
-        <dd>JavaScript — defines page behavior.</dd>
-      </dl>
-    </section>
-
-    <hr>
-
-    <!-- ===================== LINKS & IMAGES ===================== -->
-    <section id="links-images">
-      <h2>Links and Images</h2>
-
-      <p>
-        Visit the
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
-          MDN HTML documentation
-        </a>
-        to learn more about HTML elements.
-      </p>
-
-      <figure>
-        <img src="images/sample-photo.jpg" alt="A scenic mountain landscape at sunset" width="400">
-        <figcaption>Figure 1: A placeholder mountain landscape image.</figcaption>
-      </figure>
-    </section>
-
-    <hr>
-
-    <!-- ===================== TABLES ===================== -->
-    <section id="tables">
-      <h2>Tables</h2>
-
-      <table border="1">
-        <caption>Weekly HTML Study Schedule</caption>
-        <thead>
-          <tr>
-            <th>Day</th>
-            <th>Topic</th>
-            <th>Duration</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Monday</td>
-            <td>Document Structure</td>
-            <td>1 hour</td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td>Semantic Tags</td>
-            <td>1 hour</td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>Forms &amp; Tables</td>
-            <td>1.5 hours</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <hr>
-
-    <!-- ===================== FORMS ===================== -->
-    <section id="forms">
-      <h2>Forms</h2>
-
-      <form>
-        <fieldset>
-          <legend>Student Registration (Demo Only)</legend>
-
-          <p>
-            <label for="fullname">Full Name:</label><br>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
-          </p>
-
-          <p>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" placeholder="you@example.com">
-          </p>
-
-          <p>
-            <label for="bio">Short Bio:</label><br>
-            <textarea id="bio" name="bio" rows="4" cols="40" placeholder="Tell us about yourself"></textarea>
-          </p>
-
-          <p>
-            <label for="course">Preferred Course:</label><br>
-            <select id="course" name="course">
-              <option value="html">HTML Basics</option>
-              <option value="css">CSS Basics</option>
-              <option value="js">JavaScript Basics</option>
-            </select>
-          </p>
-
-          <p>
-            <button type="button">Submit (Demo Only)</button>
-          </p>
-        </fieldset>
-      </form>
-    </section>
-
-    <hr>
-
-    <!-- ===================== MEDIA ===================== -->
-    <section id="media">
-      <h2>Media</h2>
-
-      <h3>Audio</h3>
-      <audio controls>
-        <source src="media/sample-audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-      </audio>
-
-      <h3>Video</h3>
-      <video width="400" controls>
-        <source src="media/sample-video.mp4" type="video/mp4">
-        Your browser does not support the video element.
-      </video>
-    </section>
-
-    <hr>
-
-    <!-- ===================== ASIDE NOTES ===================== -->
-    <aside id="aside-notes">
-      <h2>Notes</h2>
-      <p>
-        This page is intentionally built without CSS or JavaScript so that
-        beginners can focus purely on HTML structure and semantics.
-      </p>
-    </aside>
-
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer>
-    <p>&copy; 2026 HTML Tags Demo Page. Built for learning purposes.</p>
+    <p>Made with HTML, CSS &amp; a little JavaScript magic ✨</p>
   </footer>
+
+  <script src="my-array.js"></script>
+  <script src="my-object.js"></script>
+  <script>
+    const catGrid = document.getElementById("catGrid");
+    const cats = Object.values(mycatgang);
+
+    cats.forEach((cat, index) => {
+      const card = document.createElement("div");
+      card.className = "cat-card";
+
+      // Real cat photo pulled live from the cataas.com public cat-photo API
+      const photoUrl = `https://cataas.com/cat/says/${encodeURIComponent(cat.name)}?width=400&height=400&fontSize=40&fontColor=white`;
+
+      card.innerHTML = `
+        <div class="photo-wrap">
+          <img src="${photoUrl}" alt="A realistic photo of ${cat.name} the cat" loading="lazy">
+        </div>
+        <h2>${cat.name}</h2>
+        <span class="badge">${mycat[index]}</span>
+        <p>Color: <span>${cat.color}</span></p>
+        <p>Size: <span>${cat.size}</span></p>
+      `;
+
+      catGrid.appendChild(card);
+    });
+
+    const arrayList = document.getElementById("arrayList");
+    mycat.forEach(name => {
+      const li = document.createElement("li");
+      li.textContent = name;
+      arrayList.appendChild(li);
+    });
+
+    const objectList = document.getElementById("objectList");
+    Object.entries(mycatgang).forEach(([key, cat]) => {
+      const li = document.createElement("li");
+      li.textContent = `${key}: ${cat.name} (${cat.color}, ${cat.size})`;
+      objectList.appendChild(li);
+    });
+  </script>
 
 </body>
 </html>
