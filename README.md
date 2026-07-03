@@ -1,9 +1,13 @@
-## My First JSD Project
+## My Cat Gang 🐱
 
-<br>
+### WEEK01 — Learn basic HTML, JavaScript Arrays, and Objects
 
-### WEEK01
+A cat-themed web page that demonstrates JavaScript fundamentals:
 
-<div style="background-color: red; color: white; padding: 10px; border-radius: 6px;">
-Learn basic HTML by using JavaScript arrays and objects.
-</div>
+- **`my-array.js`** — An array `mycat` holding 4 cat names: `johny`, `bobby`, `johny jr`, `babybear`
+- **`my-object.js`** — An object `mycatgang` with 4 cats, each having `name`, `color`, and `size` properties
+- **`index.html`** — Renders cat cards from the object data (with live cat photos from [cataas.com](https://cataas.com)) and displays raw array/object data in lists
+
+### How to run
+
+Open `index.html` in any browser — no server required.
