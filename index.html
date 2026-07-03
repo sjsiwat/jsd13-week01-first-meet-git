@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>猫のグループ </title>  //เนโกะโนะ กุรุปปุ (Neko no Guruppu) - "Cat Gang" in Japanese
+  <title>猫のグループ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- เนโกะโนะ กุรุปปุ (Neko no Guruppu) - "Cat Gang" in Japanese.  -->
+
   <style>
     * {
       box-sizing: border-box;
@@ -14,24 +17,98 @@
       min-height: 100vh;
       font-family: "Segoe UI", Verdana, Arial, sans-serif;
       background: url("https://images7.alphacoders.com/131/thumb-1920-1311446.png") center center / cover no-repeat fixed;
-      color: #ffffff;
+        color: #f4f0f0;
       padding: 40px 20px;
     }
 
     header {
-      text-align: center;
-      margin-bottom: 40px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      display: table;
+      margin: 0 auto 40px;
+      padding: 14px 28px;
+      border-radius: 24px;
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 2px;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.1),
+        rgba(200, 220, 255, 0.6),
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.5)
+      );
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: liquidBorder 4s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes liquidBorder {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header h1 {
       font-size: 2.6rem;
-      margin: 0 0 8px;
+      margin: 0;
+      font-family: "Caveat", cursive;
+      color: #0a1a4a;
+      text-shadow:
+        0 0 8px rgba(30, 80, 255, 0.7),
+        0 0 16px rgba(30, 80, 255, 0.5),
+        0 0 32px rgba(30, 80, 255, 0.3);
     }
 
-    header p {
-      margin: 0;
-      color: #f0f0f0;
+    header h2 {
+      font-size: 1.8rem;
+      margin: 4px 0;
+      font-family: "Caveat", cursive;
+      color: #0a1a4a;
+      text-shadow:
+        0 0 8px rgba(30, 80, 255, 0.7),
+        0 0 16px rgba(30, 80, 255, 0.5),
+        0 0 32px rgba(30, 80, 255, 0.3);
+    }
+
+    header h3 {
+      font-size: 1.5rem;
+      margin: 4px 0;
+      font-family: "Caveat", cursive;
+      color: #0a1a4a;
+      text-shadow:
+        0 0 6px rgba(30, 80, 255, 0.6),
+        0 0 12px rgba(30, 80, 255, 0.3);
+    }
+
+    header div {
+      margin: 4px 0 0;
+      font-family: "Caveat", cursive;
+      font-size: 1.4rem;
+      color: #0a1a4a;
+      text-shadow:
+        0 0 6px rgba(30, 80, 255, 0.6),
+        0 0 12px rgba(30, 80, 255, 0.3);
+    }
+
+    header code {
+      background: rgba(10, 26, 74, 0.12);
+      padding: 2px 8px;
+      border-radius: 6px;
+      color: #1a3a8a;
+      font-family: "Courier New", monospace;
+      text-shadow: none;
     }
 
     main {
@@ -136,9 +213,13 @@
 </head>
 <body>
 
-  <header>
-    <h1>🐱 My Cat Gang 🐱</h1>
-    <p>Meet the crew, rendered live from <code>my-array.js</code> and <code>my-object.js</code></p>
+  <header align="center">
+    <h1>🐱  猫の仲間  🐱</h1> <br>
+    <h2>My Cat Family</h2> <br>
+    <h3>meoww ~ </h3>
+
+    <div> Meet the crew, rendered live from <code>my-array.js</code> and <code>my-object.js</code> </div>
+
   </header>
 
   <main>
@@ -157,7 +238,8 @@
   </main>
 
   <footer>
-    <p>Made with HTML, CSS &amp; a little JavaScript magic ✨</p>
+    <p>Made with HTML, CSS &amp; For learning about web development ✨</p> <br>
+    <p> Hooman cant live with out cat</p>
   </footer>
 
   <script src="my-array.js"></script>
